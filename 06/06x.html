@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 문서의 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+    <!-- 뷰포트 설정: 반응형 디자인을 위해 브라우저의 화면 크기에 따라 페이지 크기를 조정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부 CSS 파일을 링크: "js.css" 및 "06.css" 파일을 참조하여 스타일을 적용 -->
+    <link rel="stylesheet" type="text/css" href="../js.css">
+    <link rel="stylesheet" type="text/css" href="./06.css">
+    <!-- 문서의 제목 설정 -->
+    <title>JS기초</title>
+
+    <!-- 내부 자바스크립트 코드 -->
+    <script>
+        // 버튼 클릭 시 주사위를 굴리고 이미지를 변경하는 함수
+        function rollDice(userChoice) {
+            // 1에서 6 사이의 랜덤 숫자를 생성 (컴퓨터의 선택)
+            const randomNum = Math.floor(Math.random() * 6) + 1;
+
+            // 랜덤 숫자에 따라 컴퓨터의 이미지 변경
+            document.getElementById('com').src = `../img/${randomNum}.png`;
+
+            // 사용자가 선택한 숫자에 따라 유저의 이미지 변경
+            document.getElementById('user').src = `../img/${userChoice}.png`;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 페이지의 헤더 섹션 -->
+    <header>
+        <!-- 첫 번째 레벨의 제목(h1): "자바스크립트 주사위게임"이라는 텍스트를 표시 -->
+        <h1>자바스크립트 주사위게임</h1>
+        <!-- 오른쪽에 위치할 링크와 이미지 컨테이너 -->
+        <div>
+            <!-- 링크(anchor): "index.html"로 이동하며, "한사랑 산악회.jpg" 이미지를 아이콘으로 사용 -->
+            <a href='../index.html'><img src='../img/한사랑 산악회.jpg' id='home'></a>
+        </div>
+    </header>
+
+    <!-- 페이지의 메인 콘텐츠 섹션 -->
+    <main>
+        <!-- 주사위 이미지를 표시하는 섹션 -->
+        <section class="secDice">
+            <p>
+                <!-- "Computer" 텍스트와 함께 컴퓨터의 주사위 이미지 표시 -->
+                <span>Computer</span>
+                <img id="com" src="../img/1.png">
+            </p>
+            <p>
+                <!-- "user" 텍스트와 함께 유저의 주사위 이미지 표시 -->
+                <span>user</span>
+                <img id="user" src="../img/1.png">
+            </p>
+        </section>
+
+        <!-- 숫자를 선택할 수 있는 버튼들이 있는 섹션 -->
+        <section class="secDice">
+            <!-- 각 버튼 클릭 시 rollDice 함수가 호출되며, 인자로 1~6의 숫자를 전달 -->
+            <button onclick="rollDice(1)">1선택</button>
+            <button onclick="rollDice(2)">2선택</button>
+            <button onclick="rollDice(3)">3선택</button>
+            <button onclick="rollDice(4)">4선택</button>
+            <button onclick="rollDice(5)">5선택</button>
+            <button onclick="rollDice(6)">6선택</button>
+        </section>
+    </main>
+
+    <!-- 내부 스타일링 정의 -->
+    <style>
+        /* 헤더 내용을 중앙 정렬하고 하단에 20px의 여백 추가 */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* .secDice 섹션 내에서 아이템들을 가로로 정렬하고, 중앙에 배치 */
+        .secDice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* 이미지 스타일링: 같은 높이로 맞추고, 가로 방향으로 20px의 간격을 추가 */
+        .secDice img {
+            width: 100px; /* 이미지 너비 설정 */
+            height: 100px; /* 이미지 높이 설정 */
+            margin: 0 20px; /* 이미지 간격 설정 */
+        }
+
+        /* 버튼 스타일링: 여백, 패딩, 배경색, 글자색, 테두리 등을 설정 */
+        .secDice button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: brown;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer; /* 버튼에 커서가 올라갈 때 포인터 표시 */
+        }
+
+        /* 버튼에 마우스를 올렸을 때의 효과: 배경색 변경과 글씨 굵게 */
+        .secDice button:hover {
+            background-color: darkorange;
+            font-weight: bold;
+        }
+    </style>
+</body>
+
+</html>
