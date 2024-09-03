@@ -2,56 +2,70 @@
 <html lang="en">
 
 <head>
-  
+  <!-- 문서의 문자 인코딩을 정의합니다 -->
   <meta charset="UTF-8">
   
+  <!-- 페이지가 반응형으로, 다양한 화면 크기에 맞춰 조정되도록 합니다 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" type="text/css" href="../js.css">
-  <link rel="stylesheet" type="text/css" href="./06.css">
+  <!-- 외부 CSS 파일을 링크하여 스타일을 적용합니다 -->
+  <link rel="stylesheet" type="text/css" href="../js.css"> 
+  <link rel="stylesheet" type="text/css" href="./06.css"> 
   
+  <!-- 브라우저 탭에 표시될 문서의 제목을 설정합니다 -->
   <title>JS기초</title>
-
-
-  <script src='./05.js'></script>
+  
+  <!-- 외부 JavaScript 파일을 링크하여 인터랙티브 기능을 추가합니다 -->
+  <script src='./06.js'></script>
 </head>
 
 <body>
-  
+  <!-- 페이지의 헤더 섹션입니다 -->
   <header>
-    
+    <!-- 페이지의 주요 제목입니다 -->
     <h1>자바스크립트 주사위게임</h1>
     
+    <!-- 홈 페이지로 돌아가는 링크를 포함하는 컨테이너입니다 -->
     <div>
-    
-      <a href='../index.html'><img src='../img/한사랑 산악회.jpg' id='home'></a>
+      <!-- 클릭 가능한 이미지 링크로 홈 페이지로 이동합니다 -->
+      <a href='../index.html'><img src='../img/home2.png' id='home'></a>
     </div>
   </header>
 
-  
+  <!-- 페이지의 주요 콘텐츠 영역입니다 -->
   <main>
-    <sect> </sect>
-      <p>
-        <span>Computer</span>
-        <img id="com" src="../img/1.png"></div>
-      </p>
-      <p>
-        <span>user</span>
-        <img id="user" src="../img/1.png"></div>
-      </p>
-      <div class="dice">
-        <!-- <img src="../img/1.png"></div> -->
-        </section>
-    <section class="secDice">
-        <button>1선택</button>
-        <button>2선택</button>
-        <button>3선택</button>
-        <button>4선택</button>
-        <button>5선택</button>
-        <button>6선택</button>
-      
+    <!-- 게임의 주사위 이미지를 포함하는 섹션입니다 -->
+    <section class='secDice'>
+      <div class='dice'>
+        <!-- 컴퓨터의 주사위에 대한 부제목입니다 -->
+        <h2>Computer</h2>
+        <!-- 초기 상태로 '1'을 보여주는 컴퓨터의 주사위 이미지입니다 -->
+        <img src='../img/1.png'>
+      </div>
+      <div class='dice'>
+        <!-- 사용자의 주사위에 대한 부제목입니다 -->
+        <h2>User</h2>
+        <!-- 초기 상태로 '1'을 보여주는 사용자의 주사위 이미지입니다 -->
+        <img src='../img/1.png'>
+      </div>
+    </section>
+
+    <!-- 사용자가 주사위 값을 선택할 수 있는 버튼을 포함하는 섹션입니다 -->
+    <section class='secDice'>
+      <!-- 1부터 6까지의 숫자가 적힌 버튼들입니다 -->
+      <button>1선택</button>
+      <button>2선택</button>
+      <button>3선택</button>
+      <button>4선택</button>
+      <button>5선택</button>
+      <button>6선택</button>
+    </section>
+
+    <!-- 주사위 게임의 결과를 표시하는 섹션입니다 -->
+    <section class='secDice' id='msg'>
+      <!-- 결과를 동적으로 업데이트하기 위한 자리 표시자 텍스트입니다 -->
+      결과확인
     </section>
   </main>
 </body>
-
 </html>
