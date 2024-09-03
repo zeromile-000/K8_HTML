@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 문서의 문자 인코딩을 정의합니다 -->
+  <meta charset="UTF-8">
+
+  <!-- 페이지가 반응형으로, 다양한 화면 크기에 맞춰 조정되도록 합니다 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 외부 CSS 파일을 링크하여 스타일을 적용합니다 -->
+  <link rel="stylesheet" type="text/css" href="../js.css">
+  <link rel="stylesheet" type="text/css" href="./07.css">
+
+  <!-- 브라우저 탭에 표시될 문서의 제목을 설정합니다 -->
+  <title>JS기초</title>
+
+  <!-- 외부 JavaScript 파일을 링크하여 인터랙티브 기능을 추가합니다 -->
+  <script src='./07.js'></script>
+</head>
+
+<body>
+  <!-- 페이지의 헤더 섹션입니다 -->
+  <header>
+    <!-- 페이지의 주요 제목입니다 -->
+    <h1>자바스크립트 </h1>
+
+
+    <div>
+      <!-- 클릭 가능한 이미지 링크로 홈 페이지로 이동합니다 -->
+      <a href='../index.html'><img src='../img/home2.png' id='home'></a>
+    </div>
+  </header>
+
+  <!-- 페이지의 주요 콘텐츠 영역입니다 -->
+  <form>
+    <main>
+      <section class="sec">
+        <div class="row">
+          <div class="col">
+            <select id='sel1' name="sel1">
+              <option value="℃" selected>섭씨온도(℃)</option>
+              <option value="F">화씨온도(℉)</option>
+            </select>
+          </div>
+          <div class="col">
+            <select id='sel2' name="sel2">
+              <option value="℃" selected>섭씨온도(℃)</option>
+              <option value="F">화씨온도(℉)</option>
+            
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="number" id="txt1" name="txt1">
+            <labe for="txt1">℃</labe>
+          </div>
+          <div class="col">
+            <input type="number" id="txt2" name="txt2">
+            <labe for="txt2">℉</labe>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+  </form>
+</body>
+
+</html>
