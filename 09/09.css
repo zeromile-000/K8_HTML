@@ -1,0 +1,21 @@
+.sec1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  
+}
+.sec1 > input {
+  width: 40%;
+  height: 30px;
+}
+
+#txt2 {
+  background-color: bisque;
+}
+
+.sec1 > button {
+  width: 25%;
+  margin: 5px;
+}
