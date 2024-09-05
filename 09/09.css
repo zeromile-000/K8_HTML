@@ -2,13 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  /* background-color: black; */
   width: 100%;
   
 }
 .sec1 > input {
   width: 40%;
   height: 30px;
+  margin: 5px;
+  text-align: center;
+  color: blue;
 }
 
 #txt2 {
