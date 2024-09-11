@@ -1,0 +1,106 @@
+#boxofficeMain {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  height: 520px;
+}
+
+.sec , .divDt  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.sec {
+  width: 100%;
+  flex-direction: column;
+}
+
+.divDt {
+  width: 80%;
+  height: 60px;
+  background-color: aliceblue;
+  flex-direction: row;
+
+  border: 1px dotted gray;
+}
+
+input[type=date] , select, fieldset{
+  width: 40%;
+  height: 30px;
+  margin-left: 5px;
+}
+
+.sec > ul {
+  list-style: none;
+  width : 80%; 
+
+  font-size: medium;
+}
+
+.mvli {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  margin: 0px 2px;
+}
+
+.mvli:hover {
+  background-color: aliceblue;
+  border-bottom: 1px solid blue;
+}
+
+.rank {
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+
+  border-radius: 10%;
+  margin-right: 10px;
+}
+
+.rank:hover {
+  background-color: brown;
+}
+
+.movieNm {
+  width: 60%;
+}
+
+.openDt {
+  width: 20%;
+}
+
+.rankInten {
+  width: 10%;
+  display: inline;
+  justify-content: center;
+
+}
+
+#NationCd{
+  width: 40%;
+  height: 30px;
+  margin-left: 30px;
+}
+
+.spRed{
+  color: red;
+}
+
+.spBlue{
+  color: blue;
+}
+
