@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  
   <meta charset="UTF-8">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" type="text/css" href="../js.css">
-  <link rel="stylesheet" type="text/css" href="./05.css">
-  
-  <title>JS기초</title>
-
-
-  <script src='./05.js'></script>
+  <title>준영의웹기초</title>
+  <link rel = 'stylesheet' type="text/css" href="../css/comm.css">
+  <link rel = 'stylesheet' type="text/css" href="./05.css">
+  <!-- 내부 자바스크립트 사용
+  <script>
+    function handleClick() {
+      alert('준영의 자바스크립트');
+    }
+  </script> -->
+  <!-- 외부 자바스크립트 사용 -->
+  <script src="./05.js"></script>
 </head>
-
 <body>
-  
+  <div id = 'content'>
   <header>
-    
-    <h1>자바스크립트 기초</h1>
-    
-    <div>
-    
-      <a href='../index.html'><img src='../img/한사랑 산악회.jpg' id='home'></a>
-    </div>
+    <h1>준영의 주사위 맞추기 게임</h1>
+    <div><a href='../index.html'><img src="../img/img/./7781465.png" id = home width="50px" height="50px"></a></div>
   </header>
-
-  
-  <main>
-  
-    <section>
-      <div id="msg"><img src="../img/1.png"></div>
-          </section>
-    <section>
-  
-      <button>주사위 던지기</button>
-      
-    </section>
-  </main>
+    <main>
+      <section>
+        <div id="imgDiv">
+          <div>
+            <h2>Computer</h2>
+            <img src="../img/img/1.png" alt="1" id="com">
+          </div>
+          <div>
+            <h2>User</h2>
+            <img src="../img/img/1.png" alt="1" id="user">
+          </div>
+        </div>
+        <div id = "btDiv">
+          <button >1 선택</button>
+          <button >2 선택</button>
+          <button >3 선택</button>
+          <button >4 선택</button>
+          <button >5 선택</button>
+          <button >6 선택</button>
+        </div>
+        <div id = 'msg'>
+        </div>
+      </section>
+    </main>
+  </div>
+  </head>
 </body>
-
 </html>

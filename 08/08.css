@@ -1,32 +1,37 @@
-.Upmain, .inNum{
-  border: 1px solid gray;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px; 
-  
+form {
+  width: 100%;
+
 }
 
-/* .inNum{
-  border: 1px solid gray;
-  
-
-} */
-
-
-/* .col1 ,.col2 {
-  margin: 2px;
-  width: 50px;
+section {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
-  padding: 10px;
 
-} */
+  margin: 10px;
+}
 
+button {
+  width: 100px;
+  height: 30px;
+  font-weight: bold;
+  background-color: brown;
+}
 
+input {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+}
 
+.bt1{
+  width: 136px;
+  height: 50px;
+  margin: 5px;
+}
 
-
+#txt2 {
+  background-color: blanchedalmond;
+}

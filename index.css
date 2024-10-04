@@ -1,34 +1,93 @@
 * {
-  padding: 0px;  /* 모든 요소의 기본 패딩을 제거 */
-  margin: 0px;   /* 모든 요소의 기본 마진을 제거 */
-  box-sizing: border-box; /* 요소의 크기 계산에 패딩과 보더를 포함 */
+  padding: 0px;
+  margin: 0px;
 }
 
-h1{
-  color: rgb(52, 52, 107);
-  font-size: large;
-  display: flex;              /* footer 내부의 ul을 flex 컨테이너로 설정 */
-  flex-direction: column;     /* flex 방향을 세로(column)로 설정 */
-  justify-content: center;    /* 요소를 중앙에 정렬 */
-  align-items: center;       /* 요소를 중앙에 정렬 */
-  border: 1px solid ;
-  
-  
-  
+main {
+  width: 60%;
+  margin-left: 20%;
+  border: 1px solid midnightblue;
 }
 
-#n1{
-  font-size: medium;
-  margin: 10px;
-  display: flex;           /* footer 내부의 ul을 flex 컨테이너로 설정 */
-  flex-direction: column;     /* flex 방향을 세로(column)로 설정 */
-  justify-content: center;    /* 요소를 중앙에 정렬 */
-  align-items: center;        /* 요소를 중앙에 정렬 */
-  background-color:gray;     /* section 요소의 배경색을 흰색으로 설정 */
+header {
+  background-color:midnightblue;
+  color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+article ul {
+  width: 100%;
+  background-color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: 20px;
   list-style: none;
+  font-weight: bold;
   
 }
-a{
+article li {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border: 1px dotted gray;
+  padding: 8px;
+  
+}
+article a {
   text-decoration: none;
   color: black;
+}
+
+article li:hover {
+  background-color: goldenrod;
+  color: white;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section > h1 {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted gray;
+  background-color:aliceblue;
+  width: 80%;
+  margin-top: 10px;
+}
+
+section > div {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 20px;
+  margin: 10px;
+}
+
+header > div > a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration:  none;
+  padding: 10px;
+  color: midnightblue;
+  background-color: white;
+  border-radius: 5px;
+  width: 60px;
+  
 }

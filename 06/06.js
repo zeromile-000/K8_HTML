@@ -1,45 +1,72 @@
-// DOM이 완전히 로드된 후에 실행되는 이벤트 리스너입니다
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // 'dice' 클래스 하위의 모든 이미지 요소를 선택합니다
-  const imgs = document.querySelectorAll('.dice > img');
-  
-  // 모든 버튼 요소를 선택합니다
-  const bts = document.querySelectorAll('button');
-  
-  // 결과를 표시할 요소를 선택합니다
-  const msg = document.querySelector('#msg');
+const handleChange = (t1,t2,lb1,lb2,s1,s2) =>{ // 함수로 정의
+  t1.value = ''; // 초기화
+  t2.value = '';
+  lb1.innerHTML = sel1.value;
 
-  // 버튼 요소들을 콘솔에 출력하여 확인합니다
-  console.log(bts);
-
-  // 각 버튼에 클릭 이벤트 리스너를 추가합니다
-  for (let bt of bts) {
-    // 현재 버튼 요소를 콘솔에 출력하여 확인합니다
-    console.log(bt);
-    
-    // 버튼 클릭 시 실행될 함수 정의
-    bt.addEventListener('click', () => {
-      // 컴퓨터가 선택할 랜덤 수를 생성합니다 (1부터 6까지)
-      let comN = Math.floor(Math.random() * 6) + 1; // 1~6
-      
-      // 컴퓨터의 주사위 이미지를 랜덤 수에 맞게 업데이트합니다
-      imgs[0].setAttribute('src', `../img/${comN}.png`);
-      imgs[0].setAttribute('alt', `${comN}.png`);
-      
-      // 사용자가 선택한 숫자를 추출합니다
-      let userN = parseInt(bt.textContent.charAt(0));
-      
-      // 사용자의 주사위 이미지를 선택한 숫자에 맞게 업데이트합니다
-      imgs[1].setAttribute('src', `../img/${userN}.png`);
-      imgs[1].setAttribute('alt', `${userN}.png`);
-      
-      // 컴퓨터와 사용자의 선택을 비교하여 결과를 표시합니다
-      if (comN === userN) {
-        msg.textContent = '맞음'; // 두 숫자가 같으면 '맞음' 표시
-      } else {
-        msg.textContent = '틀림'; // 두 숫자가 다르면 '틀림' 표시
-      }
-    });
+  
+  if (s1.value === '℃') {
+    s2.value = '℉';
   }
+  else {
+    s2.value = '℃'
+  }
+  lb2.innerHTML = s2.value 
+};
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  //select 요소 가져오기
+  const sel1 = document.getElementById('sel1');
+  const sel2 = document.getElementById('sel2');
+
+  //input 요소 가져오기
+  const txt1 = document.querySelector('#txt1');
+  const txt2 = document.querySelector('#txt2');
+
+  //label 요소 가져오기
+  const labels = document.querySelectorAll('label');
+
+  txt1.addEventListener('input', () => {
+    if (sel1.value === '℃') {
+      //섭씨온도 -> 화씨온도
+      txt2.value = (parseFloat(txt1.value) * (9 / 5)) + 32
+    }
+    else {
+      //화씨온도 -> 섭씨온도
+      txt2.value = (parseFloat(txt1.value) - 32) * (5 / 9)
+    }
+  });
+
+  sel1.addEventListener('change', () => {
+    handleChange(txt1,txt2,labels[0],labels[1],sel1,sel2); // 함수를 호출
+    // txt1.value = ''; // 초기화
+    // txt2.value = '';
+
+    // labels[0].innerHTML = sel1.value;
+    
+    // if (sel1.value === '℃') {
+    //   sel2.value = '℉';
+    // }
+    // else {
+    //   sel2.value = '℃'
+    // }
+    // labels[1].innerHTML = sel2.value;
+  });
+
+  sel2.addEventListener('change', () => {
+    handleChange(txt1,txt2,labels[1],labels[0],sel2,sel1); // 함수를 호출
+    // txt1.value = ''; // 초기화
+    // txt2.value = '';
+    // labels[1].innerHTML = sel2.value;
+    
+    // if (sel2.value === '℃') {
+    //   sel1.value = '℉';
+    // }
+    // else {
+    //   sel1.value = '℃'
+    // }
+    // labels[0].innerHTML = sel1.value;
+    
+  });
 });

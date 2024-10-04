@@ -1,43 +1,55 @@
-//select 값 변경
-const handlechange = (s1,s2, lb1, lb2, t1,t2) =>{
-  if(s1.value==='℃') s2.value = '℉';
-  else s2.value = '℃';
-
-  lb1.innerHTML = s1.value;
-  lb2.innerHTML = s2.value;
-
-  t1.value =" ";
-  t2.value =" ";
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  //요소 가져오기
-  const sel1 = document.querySelector('#sel1');
-  const sel2 = document.querySelector('#sel2');
-
-  const txt1 = document.querySelector('#txt1');
-  const txt2 = document.querySelector('#txt2');
-
-  const lb1 = document.querySelector('label[for=txt1]')
-  const lb2 = document.querySelector('label[for=txt2]')
+document.addEventListener('DOMContentLoaded', () => {
   
-  //select box
-  sel1.addEventListener('change', ()=>{
-    handlechange(sel1, sel2,lb1, lb2, txt1, txt2);
-  });
+  //Dom 생성 후 img, input, button 가져오기
+  const upDownimg = document.querySelector('#da');
+  const numInput = document.querySelector('#num1');
+  const Bt = document.querySelector('button');
 
-  sel2.addEventListener('change', ()=>{
-    handlechange(sel2, sel1,lb2,lb1, txt1, txt2);
-  });
+  // input focus
+  numInput.focus();
 
-  txt1.addEventListener("input",()=>{
-    if(sel1.value == '℃') {
-      //섭씨온도 -> 화씨온도
-      txt2.value = (parseFloat(txt1.value) * (9/5) + 32), toFixed(3);
-    } else { 
-      //화씨온도 -> 섭씨온도
-      txt2.value = (parseFloat(txt1.value) -32) * (5/9), toFixed(3);
+  // ramdom 변수
+  let n;
+
+  // flag 변수
+  let flag = false;
+
+  // button 클릭시
+  Bt.addEventListener('click',(e)=>{
+    e.preventDefault(); // 기본 이벤트 취소
+    // 랜덤수 생성
+    if (!flag) { // 랜덤수 변수가 false 일떄
+      n = Math.floor(Math.random() * 100) +1; //1 ~ 100까지의 랜덤수 지정
+      console.log(n);
+      flag = true;  // 랜덤수를 맞추기 전 까지 게임종료를 방지
+
+      // 입력 초기화
+      if(numInput.style.display == "none"){
+        numInput.style.display = "inline";
+        numInput.value = '';
+        numInput.focus();
+        Bt.innerHTML = "확인";
+        upDownimg.setAttribute('src','../img/img/what.png');
+        return ;
+      }
     }
 
+    // 숫자 비교
+    if (n === parseInt(numInput.value)){ //맞춘경우
+      upDownimg.setAttribute('src','../img/img/good.png');
+      numInput.style.display = "none";
+      Bt.innerHTML = "숫자를 재생성 하시오."
+      flag = false;
+    }
+    else if (n > parseInt(numInput.value)) { // UP 이미지 도출
+      upDownimg.setAttribute('src','../img/img/up.png'); 
+    }
+    else {
+      // down 이미지 도출
+      upDownimg.setAttribute('src','../img/img/down.png');
+      }
+
   });
+
+
 });

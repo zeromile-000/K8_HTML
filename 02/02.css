@@ -1,162 +1,121 @@
 * {
-  padding: 0px;  /* 모든 요소의 기본 패딩을 제거 */
-  margin: 0px;   /* 모든 요소의 기본 마진을 제거 */
-  box-sizing: border-box; /* 요소의 크기 계산에 패딩과 보더를 포함 */
+  margin: 0px;
+  padding: 0px;
 }
 
-header, main, footer {
-  width: 80%;      /* 요소의 너비를 화면의 80%로 설정 */
-  margin-left: 10%; /* 요소를 중앙에 배치하기 위해 왼쪽 마진을 10%로 설정 */
+#content {
+  background-color: aliceblue;
+  padding: 20px;
 }
 
-header, main {
-  background-color: aliceblue; /* header와 main의 배경색을 aliceblue로 설정 */
+/* .p1 {
+  background-color: white;
 }
 
-main, footer {
-  padding: 20px; /* main과 footer에 20px의 패딩을 추가 */
-}
-
-footer {
-  background-color: black;  /* footer의 배경색을 검은색으로 설정 */
-  color: white;             /* footer의 텍스트 색상을 흰색으로 설정 */
-  font-size: small;         /* footer의 폰트 크기를 작게 설정 */
-}
-
-footer > ul {
-  display: flex;              /* footer 내부의 ul을 flex 컨테이너로 설정 */
-  flex-direction: column;     /* flex 방향을 세로(column)로 설정 */
-  justify-content: center;    /* 요소를 중앙에 정렬 */
-  align-items: center;        /* 요소를 중앙에 정렬 */
-}
-
-header, header ul {
-  display: flex;              /* header와 header 안의 ul을 flex 컨테이너로 설정 */
-  flex-direction: row;        /* flex 방향을 가로(row)로 설정 */
-  justify-content: space-between; /* 요소들을 좌우로 균등하게 배치 */
-  align-items: center;        /* 요소를 세로 중앙에 정렬 */
-}
-
-header {
-  height: 80px;       /* header의 높이를 80px로 설정 */
-  padding: 20px;      /* header에 20px의 패딩을 추가 */
-}
-
-/* nav > ul { *//* header ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.p2 {
+  background-color: turquoise;
 } */
 
-/* ul 내부의 li 요소에 대한 스타일 정의 */ul {
-  list-style: none; /* 리스트의 기본 불릿 포인트를 제거 */
+header, main, footer {
+  margin: 20px;
 }
 
-.menuLi {
-  margin-right: 10px;      /* li 요소의 오른쪽 마진을 10px로 설정 */
-  margin-left: 10px;       /* li 요소의 왼쪽 마진을 10px로 설정 */
-  padding: 10px;           /* li 요소 내부에 10px의 패딩을 추가 */
-  border-radius: 5px;      /* li 요소의 모서리를 둥글게 처리 */
-  height: 45px;            /* li 요소의 높이를 45px로 설정 */
-  
-  display: flex;           /* li 요소를 flex 컨테이너로 설정 */
-  justify-content: center; /* 내용을 중앙에 정렬 */
-  align-items: center;     /* 내용을 세로로 중앙에 정렬 */
-
-  background-color: royalblue; /* li 요소의 배경색을 royalblue로 설정 */
-  color: white;                /* 텍스트 색상을 흰색으로 설정 */
+header > p {
+  margin: 20px;
+  font-weight: bold;
+  color: darkgrey;
 }
 
-.menuLi:hover {
-  background-color: chocolate; /* li 요소에 마우스를 올렸을 때 배경색을 초콜릿 색으로 변경 */
+/* nav > ul > li:hover{
+  background-color: chocolate;
+} */
+nav li:hover {
+  background-color: chocolate;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+nav li {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: royalblue;
+  color: white;
 }
 
 a {
-  text-decoration: none; /* 링크의 기본 밑줄을 제거 */
-  color: white;          /* 링크 텍스트 색상을 흰색으로 설정 */
+  color: white;
+  /* 하이퍼 링크 밑 줄 없앰 */
+  text-decoration: none; 
 }
 
-li img {
-  width: 20px;  /* li 내부의 이미지 너비를 20px로 설정 */
-  height: 20px; /* li 내부의 이미지 높이를 20px로 설정 */
+a :link {
+  /* 하이퍼링크 색상 없앰 */
+  color: white;
 }
 
-article {
-  padding: 60px; /* article 요소에 60px의 패딩을 추가 */
+header {
+  padding: 20px;
 }
 
-article > p {
-  padding: 20px; /* article 내부의 p 요소에 20px의 패딩을 추가 */
+section {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
-p > span {
-  color: brown;         /* span 텍스트 색상을 갈색으로 설정 */
-  font-weight: bold;    /* span 텍스트를 굵게 표시 */
+section > h2{
+  margin-bottom: 10px;
+  color:  royalblue;
+}
+
+section > div {
+  display: flex;
+}
+
+section > div > div{
+  width: 20%;
+}
+
+section > div > p{
+  width: 80%;
+}
+
+img {
+  border-radius: 50%;
 }
 
 h1 {
-  display: flex;              /* h1 요소를 flex 컨테이너로 설정 */
-  flex-direction: column;     /* flex 방향을 세로(column)로 설정 */
-  justify-content: center;    /* 내용을 세로로 중앙에 정렬 */
-  align-items: center;        /* 내용을 가로로 중앙에 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-size: small;
+}
+
+footer > ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width : 1024px){
+  #content {
+    width: 80%;
+    margin-left: 10%;
+  }
   
-  padding: 20px;              /* h1 요소에 20px의 패딩을 추가 */
-}
- 
-section {
-  margin: 20px;                /* section 요소에 20px의 마진을 추가 */
-  padding: 20px 40px;          /* section 요소에 상하 20px, 좌우 40px의 패딩을 추가 */
-  background-color: white;     /* section 요소의 배경색을 흰색으로 설정 */
-  border-radius: 15px;         /* section 요소의 모서리를 둥글게 처리 */
-}
-
-h2 {
-  padding-bottom: 20px; /* h2 요소의 하단에 20px의 패딩을 추가 */
-}
-
-.secDiv {
-  display: flex;      /* secDiv 요소를 flex 컨테이너로 설정 */
-  flex-direction: row; /* flex 방향을 가로(row)로 설정 */
-}
-
-.secDiv > div {
-  width: 20%; /* secDiv 내부의 div 요소의 너비를 20%로 설정 */
-}
-
-.secDiv img {
-  width: 80%;           /* secDiv 내부의 img 요소의 너비를 80%로 설정 */
-  border-radius: 50%;   /* 이미지의 모서리를 둥글게 처리 (원형 이미지) */
-}
-
-.secDiv > p {
-  width: 80%;             /* secDiv 내부의 p 요소의 너비를 80%로 설정 */
-  font-size: medium;      /* p 요소의 폰트 크기를 중간 크기로 설정 */
-  color: dimgray;         /* p 요소의 텍스트 색상을 dimgray로 설정 */
-  font-weight: bold;      /* p 요소의 텍스트를 굵게 표시 */
-}
-
-@media screen and (max-width : 1024px) {
-  header, main, footer {
-    width: 100%;   /* 화면이 1024px 이하일 때 header, main, footer의 너비를 100%로 설정 */
-    margin-left: 0px; /* 왼쪽 마진을 0px로 설정 (중앙 정렬 제거) */
-  }
-}
-
-@media screen and (max-width : 768px) {
-  header, header ul {
-    display: flex;                /* header와 header ul을 flex 컨테이너로 설정 */
-    flex-direction: column;       /* flex 방향을 세로(column)로 변경 */
-    justify-content: space-between; /* 요소들을 공간을 두고 배치 */
-    align-items: center;          /* 요소들을 중앙에 정렬 */
-    width: 100%;                  /* header와 ul의 너비를 100%로 설정 */
-  }
-  header {
-    height: auto;     /* header의 높이를 자동으로 설정 */
-    padding: 20px;    /* header에 20px의 패딩을 추가 */
-  }
-
-  header li{
-    width: 90%;          /* header의 li 요소의 너비를 90%로 설정 */
-    margin-bottom: 5px;  /* 하단에 5px의 마진을 추가 */
-  }
 }

@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- 문서의 문자 인코딩을 UTF-8로 설정 -->
   <meta charset="UTF-8">
-  <!-- 뷰포트 설정: 반응형 디자인을 위해 브라우저의 화면 크기에 따라 페이지 크기를 조정 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 외부 CSS 파일을 링크: "js.css"라는 이름의 CSS 파일을 참조하여 스타일을 적용 -->
-  <link rel="stylesheet" type="text/css" href="../js.css">
-  <!-- 문서의 제목 설정 -->
-  <title>JS기초</title>
-
-  <!-- 내부 자바스크립트 코드 (현재 주석 처리되어 실행되지 않음) -->
-  <!-- 
+  <title>준영의웹기초</title>
+  <link rel = 'stylesheet' type="text/css" href="../css/comm.css">
+  <!-- 내부 자바스크립트 사용
   <script>
-    alert('안녕하세요.');  // 페이지 로드 시 '안녕하세요.'라는 알림을 표시
-  </script> 
-  -->
-
-  <!-- 외부 자바스크립트 파일을 링크: "03.js"라는 외부 JS 파일을 참조하여 스크립트를 실행 -->
-  <script src='./03.js'></script>
+    function handleClick() {
+      alert('준영의 자바스크립트');
+    }
+  </script> -->
+  <!-- 외부 자바스크립트 사용 -->
+  <script src="./03.js"></script>
 </head>
-
 <body>
-  <!-- 페이지의 헤더 섹션 -->
+  <div id = 'content'>
   <header>
-    <!-- 첫 번째 레벨의 제목(h1): "자바스크립트 기초"라는 텍스트를 표시 -->
-    <h1>자바스크립트 기초</h1>
-    <!-- 오른쪽에 위치할 링크와 이미지 컨테이너 -->
+    <h1>준영의 랜덤수 발생</h1>
     <div>
-      <!-- 링크(anchor): "index.html"로 이동하며, home2.png 이미지를 아이콘으로 사용 -->
-      <a href='../index.html'><img src='../img/우주선.png' id='home'></a>
-    </div>
+      <a href='../index.html'><img src="../img/img/./7781465.png" id = home width="50px" height="50px"></a>
+      </div>
   </header>
-
-  <!-- 페이지의 메인 콘텐츠 섹션 -->
-  <main>
-    <!-- 콘텐츠를 그룹화하기 위한 섹션 -->
-    <section>
-      <!-- 버튼: "랜덤수 생성"이라는 텍스트가 표시된 버튼을 생성 -->
-      <button onclick="handleClick();">랜덤수 생성</button>
-      <button onclick="handleClick2();">화살표 함수</button>
-    </section>
-  </main>
+    <main>
+      <section>
+        <div>
+          <button onclick="handleClick()">랜덤수 발생</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  </head>
 </body>
-
 </html>

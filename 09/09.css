@@ -1,24 +1,63 @@
-.sec1 {
+button {
+  width: 130px;
+  height: 50px;
+  font-weight: bold;
+  background-color: brown;
+}
+
+form {
+  width: 100%;
+
+}
+
+section {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* background-color: black; */
-  width: 100%;
-  
-}
-.sec1 > input {
-  width: 40%;
-  height: 30px;
-  margin: 5px;
-  text-align: center;
-  color: blue;
+
+  padding : 20px;
+  box-sizing: border-box;
 }
 
-#txt2 {
-  background-color: bisque;
+#numSec {
+  background-color: aliceblue;
+  height: 60%;
 }
 
-.sec1 > button {
-  width: 25%;
+span{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: larger;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
   margin: 5px;
 }
+
+.sp0{
+  background-color: brown;
+}
+.sp1{
+  background-color:green;
+}
+.sp2{
+  background-color:blue;
+}
+.sp3{
+  background-color: cadetblue;
+}
+.sp4{
+  background-color:violet;
+}
+.spplus{
+  color: black;
+  font-size: xx-large;
+}
+.sp5{
+  background-color: steelblue;
+}
+

@@ -1,9 +1,10 @@
-//function 키워드 함수 만들기
+// 화살표 함수
+const handleClick = () => {
 
-function handleClick() {
-  alert('외부스크립트 : 안녕하세요.') ;
-}
- //ES6 : 화살표 함수
-const handleClick2 = () => {
-  alert('화살표 함수') ;
+let n =  Math.floor(Math.random() * 6);
+console.log(n)
+
+
+  // alert('준영의 자바스크립트 랜덤수 : ' + n);
+  alert(`랜덤수 : ${n}`);
 }

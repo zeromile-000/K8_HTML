@@ -1,5 +1,39 @@
-h2 > span {
-  color: brown;
+#imgDiv, #btDiv, #msg{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#imgDiv > div {
+  margin: 10px;
+}
+
+#msg{
+  border: 1px gray dotted;
+  height: 40px;
+  width: 50%;
+  background-color: aliceblue;
+}
+
+#ho{
+  color: red
+}
+
+#hx {
+  color: blue;
+}
+
+h2 {
+  margin: 10px;
+  font-size: medium;
   font-weight: bold;
-  padding: 1px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 5px;
 }
