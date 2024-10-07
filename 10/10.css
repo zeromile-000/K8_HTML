@@ -1,57 +1,40 @@
-.sec {
+button {
+  width: 130px;
+  height: 50px;
+  font-weight: bold;
+  background-color: brown;
+}
+
+form {
   width: 100%;
 
+}
+
+section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+
+  padding : 5px;
+  box-sizing: border-box;
 }
 
-.div1 {
-  background-color:rgb(240, 239, 239);
-  padding: 10px;
-  border-radius: 10px;
-  margin: 0px 5px;
+#numSec {
+  background-color: aliceblue;
+  height: 20%;
 }
 
-.divplus > span {
-  color: black; 
-  font-size: xx-large;
-  font-weight: bold;
+#txt1{
+  width: 80%;
+  height: 30px;
 }
 
-span {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: larger;
-  font-weight: bold;
-
-  color: white;
+.objBt1, .objBt2, .objBt3, .objBt4{
+  width: 20%;
+  margin: 5px 10px;
 }
 
-.sp0 {
-  background-color: brown;
-}
-
-.sp1 {
-  background-color:chocolate
-}
-
-.sp2 {
-  background-color: darkgreen;
-}
-
-.sp3 {
-  background-color: darkblue;
-}
-
-.sp4 {
-  background-color: blueviolet;
+.objBt1{
+  margin-top: 20px;
 }

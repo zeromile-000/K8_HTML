@@ -1,52 +1,48 @@
-const disp = ( divNum, divplus,divBonus, dsp ) => {
-  divNum.style.display = dsp;
-  divplus.style.display = dsp;
-  divBonus.style.display = dsp;
-}
+document.addEventListener('DOMContentLoaded',()=>{
+  // 요소 가져오기 (txt1 : input Box의 요소)
+  const txt1 = document.querySelector('#txt1');
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  //요소 가져오기
-  const divNum = document.querySelector('#divNum') ;
-  const divplus = document.querySelector('.divplus') ;
-  const divBonus = document.querySelector('#divBonus') ;
-  const bt = document.querySelector('.sec > button') ;
+  // 요소 가져오기 (버튼)
+  const bt1s = document.querySelectorAll('.objBt1'); // 추가
+  const bt2s = document.querySelectorAll('.objBt2'); // 삭제
+  const bt3s = document.querySelectorAll('.objBt3'); // 수정
+  const bt4s = document.querySelectorAll('.objBt4'); // json
 
-  //요소 숨기기
-  // divNum.style.display = 'none';
-  // divplus.style.display = 'none';
-  // divBonus.style.display = 'none';
-  disp(divNum, divplus,divBonus, 'none');
+  // 오브젝트 이모지 객체 생성
+  const emoji = {'사과' :'🍎',
+                '바나나' :'🍌',
+                '오렌지' :'🍊',
+                '수박' :'🍉',
+                '당근' :'🥕',
+                '오이' :'🥒',
+                '브로콜리' :'🥦',
+  }
 
-  //버튼 클릭
-  bt.addEventListener('click', (e)=>{
-    e.preventDefault();
+  // 추가 함수 생성
+  for(let bt of bt1s){
+    bt.addEventListener('click',(e)=>{ // bt를 클릭할 경우
+      e.preventDefault();
+      btkey = bt.innerHTML.replace('추가','') ; // bt의 속성을 btkey에 할당, replace를 사용하여 '추가'라는 문자열을 삭제
+      txt1.value = txt1.value + emoji[btkey]; // txt1
+      console.log(btkey); //출력
 
-    let arr = [] ;
-    while( arr.length < 7) {
-      let n = Math.floor(Math.random() * 45) + 1 ; //1~45
-      if ( !arr.includes(n) ) arr.push(n) ;
-    }
 
-    let arrBonus = arr.splice(6,1) ;
-    arr.sort((a,b) => a - b);
-    console.log(arrBonus);
-    
-    arr = arr.map( item => 
-                    `<span class='sp${Math.floor(item/10)}'>${item}</span>`) ;
-    arr = arr.join('');
-    divNum.innerHTML = arr ;
-    console.log(arr);
+    });
+  }
 
-    arrBonus = arrBonus.map(item => 
-                            `<span class='sp${Math.floor(item/10)}'>${item}</span>`);
-    arrBonus = arrBonus.join('');
-    divBonus.innerHTML = arrBonus ;
+  // 삭제 함수 생성
+  for(let bt of bt2s){
+    bt.addEventListener('click',(e)=>{ // bt를 클릭할 경우
+      e.preventDefault();
+      btkey = bt.innerHTML.replace('삭제','') ; // bt의 속성을 btkey에 할당, replace를 사용하여 '추가'라는 문자열을 삭제
+      let tmArr = Array.from(txt1.value);  
+      tmArr = tmArr.filter( item => item != emoji[btkey])
+      txt1.value = tmArr.join(''); // txt1
+      console.log(btkey); //출력
 
-    //요소 숨기기
-    // divNum.style.display = 'block';
-    // divplus.style.display = 'block';
-    // divBonus.style.display = 'block';
-    disp(divNum, divplus,divBonus, 'block');
-  });
+
+    });
+  }
+
 
 });

@@ -1,95 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-  //요소 가져오기
-  const txt1 = document.querySelector('#txt1');
-  const secBt1 = document.querySelectorAll('.secBt1');
-  const secBt2 = document.querySelectorAll('.secBt2');
-  const secBt3 = document.querySelectorAll('.secBt3');
-  const secBt41 = document.querySelector('#secBt41');
-  const secBt42 = document.querySelector('#secBt42');
+document.addEventListener('DOMContentLoaded', ()=>{
+  // 요소 가져오기
+  const dt = document.querySelector('input[type=date]');
+  const mvList = document.querySelector('#mvList');
 
-  // object 생성
-  let obj = {
-    apple: '🍎',
-    carrot: '🥕',
-    banana: '🍌',
-  };
+  // 어제 날짜 구하기
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1); // 어제 날짜
 
-  let jsonDt;
-  secBt41.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    jsonDt = JSON.stringify(obj);
-
-    console.log('obj = ', obj);
-    console.log('obj = ', obj["apple"]);
-    console.log('jsonDt = ', jsonDt);
-    console.log('jsonDt = ', jsonDt["apple"]);
-  })
-
-  secBt42.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    let obj2 = JSON.parse(jsonDt);
-
-    console.log('obj2 = ', obj2);
-    console.log('obj2 = ', obj2["apple"]);
-  })
-
-  //추가
-  for (let bt of secBt1) {
-    bt.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      let addItem = bt.innerHTML.replace('추가', '');
-      txt1.value = txt1.value + addItem;
-      console.log(bt.innerHTML);
-    });
-  }
-
-  //삭제
-  for (let bt of secBt2) {
-    bt.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      let addItem = bt.innerHTML.replace('삭제', '');
-      // case 1
-      // txt1.value = txt1.value.replaceAll(addItem, '') ;
+  // 어제 년월일 구하기 yyyy-mm-dd
+  const year = yesterday.getFullYear (); // 년도를 4자리로 가져오기
+  // getMonth() : 0월 ~ 11월 , 0월부터 가져오기 때문에 +1을 해줘야 1월 부터 가져올 수 있다.
+  // const month = (yesterday.getMonth() + 1) > 9 // mm 단위로 가져오기
+  //               ? (yesterday.getMonth() + 1) // 9보다 크면 그대로 사용
+  //               : '0' +(yesterday.getMonth() + 1); // 9보다 작으면 앞에 0을 붙여서 사용
 
 
-      let tmArr = Array.from(txt1.value);  //이모지형태로 분리
-      // let tmArr = txt1.value.split('') ; //유니코드로 분리
+  const month = String(yesterday.getMonth()+1).padStart(2,'0'); // padStart() 자리수를 지정 및 부족할 경우 대체할 키워드를 삽입
+  const day = String(yesterday.getDate()).padStart(2,'0');
+  const maxDate = `${year}-${month}-${day}`; // 어제 날짜 형식 지정 및 데이터 삽입
+  console.log(maxDate)
 
-      // case 2
-      // for(let i =0 ; i < tmArr.length ; i++) {
-      //   if (tmArr[i] == addItem ) tmArr[i] = '' ;
-      //  }
+  dt.max = maxDate; // 어제 날짜이후 선택제한
 
 
-      // case 3
-      tmArr = tmArr.filter(item => item != addItem);
+  // API 데이터 가져오기
+  dt.addEventListener('change', ()=> { // 날짜가 바뀌었을 떄 
+    let testApikey = '82ca741a2844c5c180a208137bb92bd7' // testApikey 변수에 key정보를 할당
+    url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?` // url 주소를 할당
+    url = `${url}key=${testApikey}&targetDt=${dt.value.replaceAll('-','')}`
+    
+    console.log(url)
 
-      tmArr = tmArr.join('');
-      txt1.value = tmArr;
-      console.log(tmArr);
+    fetch(url) // 서버에 url 데이터 요청
+      .then(resp => resp.json()) // 받아온 url 데이터를 json 데이터로 변환
+      .then(data => {
+        console.log(data.boxOfficeResult.dailyBoxOfficeList); // data를 콘솔에 출력
+        let mv = data.boxOfficeResult.dailyBoxOfficeList; // mv 변수에 boxOfficeResult 안에 있는 dailyBoxOfficeList의 배열 데이터를 할당
+        let mvLi = '' ; // 빈 배열 생성
+        for(let item of mv){ // mv를 item에 순차적으로 값을 대입
+          mvLi = mvLi + `<li>${item.rank} - ${item.movieNm}</li>`; // mvLi 변수에 <li> 태그형식으로 item에 있는 순위와 movieNm을 할당
+        }
+        mvList.innerHTML = mvLi;  // mvList요소의 값을 mvLi으로 바꿈
+      })
+      .catch( err => console.err(err));  // err 발생시 콘솔에 err 출력
 
-    });
-  }
-
-  //변경
-  for (let bt of secBt3) {
-    bt.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      let items = bt.innerHTML.split('→');
-      console.log('items = ', items);
-      // txt1.value = txt1.value.replaceAll(items[0], items[1]) ;
-
-      let tmArr = Array.from(txt1.value);
-      tmArr = tmArr.map(item => item == items[0] ? items[1] : item);
-      txt1.value = tmArr.join('');
-
-      console.log(tmArr);
-    });
-  }
-
+  });
 });

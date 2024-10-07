@@ -1,18 +1,45 @@
-.sec, .sec1{
+form {
   width: 100%;
-
+}
+#boxofficeMain {
   display: flex;
+
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  height: 520px;
+}
+section {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  padding : 5px;
+  box-sizing: border-box;
 }
 
-input {
-  width: 80%;
+#numSec {
+  background-color: aliceblue;
+  height: 30%;
+}
+
+input[type=data]{
+  width: 60%;
   height: 30px;
-  text-align: center;
 }
 
-.secBT1, .secBT2, .secBT3, #sec{
-  width: 15%;
-  margin: 0px 5px;
+ul{
+  list-style: none;
+  width: 60%;
+}
+
+li {
+  padding: 5px;
+}
+
+li:hover{
+  background-color: aliceblue;
+  font-weight: bold;
 }
